@@ -1,4 +1,4 @@
-package com.petros.efthymiou.dailypulse.articles
+package com.petros.efthymiou.dailypulse.articles.presentation
 
 sealed class State<out T>{
     data class Success<T>(val data: T): State<T>()

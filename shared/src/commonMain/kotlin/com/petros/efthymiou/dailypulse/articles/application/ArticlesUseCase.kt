@@ -1,5 +1,7 @@
-package com.petros.efthymiou.dailypulse.articles
+package com.petros.efthymiou.dailypulse.articles.application
 
+import com.petros.efthymiou.dailypulse.articles.data.ArticleRaw
+import com.petros.efthymiou.dailypulse.articles.data.ArticlesRepository
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.datetime.TimeZone
@@ -14,7 +16,7 @@ class ArticlesUseCase(private val repository: ArticlesRepository) {
         return mapArticles(articlesRaw)
     }
 
-    private fun mapArticles(articlesRaw: List<ArticleRaw>): List<Article> = articlesRaw.map {raw->
+    private fun mapArticles(articlesRaw: List<ArticleRaw>): List<Article> = articlesRaw.map { raw->
         Article(
             title = raw.title,
             desc = raw.desc ?: "Click to find out more",
