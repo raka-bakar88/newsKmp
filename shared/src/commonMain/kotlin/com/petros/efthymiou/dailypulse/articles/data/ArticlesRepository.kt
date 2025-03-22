@@ -27,4 +27,9 @@ class ArticlesRepository(
         dataSource.insertArticles(fetchedArticles)
         return fetchedArticles
     }
+
+    suspend fun getSources(): List<SourcesRaw>{
+        val sources = service.fetchSources()
+        return sources
+    }
 }
